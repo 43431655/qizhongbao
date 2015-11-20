@@ -1,0 +1,16 @@
+﻿.listpage {clear: both;text-align: center;}
+ .piclist{width:720px;}
+ .piclist ul{}
+ .piclist li{width:240px;float:left;height:200px;overflow:hidden;}
+ .piclist img{width:224px;height:160px;padding:2px;border: 1px solid #cfcfcf;margin-bottom:8px;}
+ .piclist a{}
+ .piclist a:hover{color:red;text-decoration:none;}
+ .picname{text-align:center;}
+.mainbody .page h2 {text-align:center;margin:20px;}
+.mainbody .info {text-align:center;color:#999;margin-bottom:20px;}
+.content{line-height:24px;}
+
+.xiaocms-page { padding:14px 0 10px;font-family:\5b8b\4f53; margin-right: 10px;}
+.xiaocms-page a { display:inline-block; height:22px; line-height:22px; background:#fff; border:1px solid #e3e3e3; text-align:center; color:#333; padding:0 10px;margin-left: 1px;}
+.xiaocms-page a:hover { background:#f1f1f1; color:#000; text-decoration:none; }
+.xiaocms-page span { display:inline-block; height:22px;padding:0 10px; line-height:22px; background:#5a85b2; border:1px solid #5a85b2; color:#fff; text-align:center;margin-left: 1px; }

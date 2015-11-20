@@ -1,0 +1,17 @@
+﻿<div class="sidebar">
+    <div class="clearfix k1120">
+        <div class="navBox" id="openSidebar">
+            <a href="javascript:void(0)" class="navOpen"></a>
+        </div>
+        <div id="menu">
+            <ul class="clearfix">
+                <li><a href="#home" class="nav_home current"><span>首页<br /><b>Home</b></span></a>
+                </li>
+                {xiao:nav num=5}
+                <li><a href="#{xiao:function.strcat($xiao['catdir'])}" class="nav_{xiao:$xiao['catdir']}"><span>{xiao:$xiao['catname']}<br /><b>{xiao:$xiao['catdir']}</b></span></a>
+                </li>
+                {/xiao:nav}
+            </ul>
+        </div>
+    </div>
+</div>
