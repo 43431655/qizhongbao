@@ -176,4 +176,21 @@ class index extends Base {
 		$this->view->display($form_model['showtpl']);
 	}
 
+
+	/*
+	 * 自定义表单提交
+	 * */
+			public function formaddAction(){
+				$data = $_POST['data'];
+				$data['time'] = time();
+				$data['status'] = 0;
+				foreach($data as $k=>$v){
+					$data[$k] = strip_tags($v);
+				}
+
+				if($this->db->setTableName('form_gestbook')->insert($data)){
+					$this->show_message('提交成功',1);
+				}
+			}
+
 }

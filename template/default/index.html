@@ -231,21 +231,18 @@
                             </div>
                         </div>
 
-						<form action="/qizhongbao/index.php?c=index&a=form&modelid=3"  enctype="multipart/form-data" method="post" >
-<input type="hidden" name="action" value="post" />
-<input type="hidden" name="diyid" value="1" />
-<input type="hidden" name="do" value="2" />
-                            {xiao:$fields}
+						<form type="hidden" action="{xiao:function.url('index/formadd')}"  enctype="multipart/form-data" method="post" >
+
                             <div class="messageRow_2">
                                 <div class="messageBox">
                                     <div class="fromList">
-                                        <input type="text" placeholder="您的姓名" value='' name="data[fullname]" id="full_name" />
+                                        <input type="text" placeholder="您的姓名" value='' name="data[fullname]" id="fullname" required/>
                                     </div>
                                     <div class="fromList">
-                                        <input type="text" placeholder="联系电话" value='' name="data[mobile]" id="mobile" />
+                                        <input type="text" placeholder="联系电话" value='' name="data[mobile]" id="mobile" required/>
                                     </div>
                                     <div class="fromList">
-                                        <input type="text" placeholder="电子邮箱" value='' name="data[email]" id="email" />
+                                        <input type="email" placeholder="电子邮箱" value='' name="data[email]" id="email" />
                                     </div>
                                     <div class="fromList">
                                         <input type="text" placeholder="公司名称" value='' name="data[company]" id="company" />
@@ -255,18 +252,8 @@
                             <div class="messageRow_3">
                                 <div class="messageBox">
                                     <div class="fromList">
-                                        <textarea placeholder="填写详细内容" value='' name="msg" id="msg"></textarea>
+                                        <textarea placeholder="填写详细内容" value='' name="data[msg]" id="msg" required></textarea>
                                     </div>
-									<input name="mytime" value="" type="hidden"  id="mytime"  />
-      <script type="text/javascript">
-                    window.onload = function(){
-                    var nowDate = new Date();
-                    var str = nowDate.getFullYear()+"-"+(nowDate.getMonth() + 1)+"-"+nowDate.getDate()+" "+nowDate.getHours()+":"+nowDate.getMinutes()+":"+nowDate.getSeconds();
-                    document.getElementById("mytime").value=str;
-                    }
-                    </script>
-									<input type="hidden" name="dede_fields" value="full_name,text;mobile,text;email,text;company,text;msg,multitext;mytime,text" />
-                                    <input type="hidden" name="dede_fieldshash" value="c971c82ee72551f4e9e131a5a98d85bc" />
                                     <input type="image" name="sumbit" src="{xiao:$site_template}statics/images/btn.png"  /><span class="fromListInfo">我们将在1个工作日内回复，资料会保密处理。</span>
                                    
                                 </div>
