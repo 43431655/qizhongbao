@@ -345,7 +345,7 @@ class view
                 $count = $db->query('SELECT count(*) AS total ' . $from . ' ' . $where)->fetchAll();
             }
             $limit = ' LIMIT ' . $pagesize * ($system['page'] - 1) . ',' . $pagesize;
-            $pagelist = xiaocms::load_class('pager');
+            $pagelist = xiaocms::load_class('pagerview');
             $pagelist = $pagelist->total($count['0']['total'])->url($pageurl)->num($pagesize)->hide()->page($system['page'])->output();
         }
         if (!empty($system['cache'])) {

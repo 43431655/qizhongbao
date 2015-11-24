@@ -1,0 +1,38 @@
+﻿﻿{xiao:template header.html}
+
+<body>
+    <div class="wrapper">
+        {xiao:template head_cases.html}
+        <div class="pageMain">
+            <div id="header">
+                <div class="k1120 clearfix"><a href="/#home" id="logo">logo</a>
+                </div>
+            </div>
+            <div id="case" class="scrol-page">
+                <h2 class="title"><span>我们的作品</span></h2>
+                <h5 class="infoText">新颖的设计方案，大胆的革新思想，灵活的运用最新技术，是品网视觉的特点，我们只做有灵魂的设计</h5>
+                <div class="caseNav">
+                    <ul>
+                        {xiao:nav parentid=2}
+                        <li>
+                            <a href="{xiao:$xiao['url']}">{xiao:$xiao['catname']}</a></li>
+                        {/xiao:nav}
+                    </ul>
+                </div>
+                <div id=webdesign class="case k1120">
+                    <ul class="clearfix">
+                        {xiao:list catid=$catid pagesize=8 page=$page cache=60}
+                        <li>
+                            <div class="view-tenth"><img src="{xiao:function.thumb($xiao[thumb],265,176)}"><a href="{xiao:$xiao['url']}" class="mask" target="_blank"><h2>{xiao:$xiao['title']}</h2><p>发布于：{xiao:function.date("Y-m-d", $xiao['time'])} / 浏览：{xiao:$xiao['hits']}</p></a>
+                            </div>
+                        </li>
+                        {/xiao:list}
+                    </ul>
+                    {xiao:$pagelist}
+                </div>
+            </div>
+        </div>
+        {xiao:template footer.html}
+    </div>
+</body>
+</html>

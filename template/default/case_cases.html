@@ -1,0 +1,33 @@
+﻿﻿{xiao:template header.html}
+
+<body>
+    <div class="wrapper">
+        {xiao:template head_cases.html}
+        <div class="pageMain">
+            <div id="header">
+                <div class="k1120 clearfix"><a href="/#home" id="logo">logo</a>
+                </div>
+            </div>
+            <div id="news" class="scrol-page">
+                <div class="k1120">
+                    <h2 class="title"><span>{xiao:$title}<br><b>发布于：{xiao:function.date("Y-m-d", $time)} 　浏览：<script type="text/javascript"  src="{xiao:function.url('api/hits',array('id'=>$id))}">  </script></b></span></h2>
+                    <div class="viewMain">
+
+                        <p><img src="{xiao:$caseimg}" alt=""></p>
+                        <br>
+
+                        <br>
+                        <p>{xiao:$content}</p>
+                        <br>
+                        <p>浏览地址：{xiao:$wangzhi}</p>
+                        <div class="paging">
+                            {xiao:if $next_page}  上一篇：<a href="{xiao:$next_page['url']}">  {xiao:$next_page['title']}</a>  {/xiao:if}
+                            {xiao:if $prev_page}  下一篇：<a href="{xiao:$prev_page['url']}">  {xiao:$prev_page['title']}</a>  {/xiao:if}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {xiao:template footer.html}
+        </div>
+</body>
+</html>

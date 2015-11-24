@@ -1,66 +1,8 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <link href="<?php echo $site_template; ?>statics/images/apple-touch-icon-57.png" sizes="57x57" rel="apple-touch-icon">
-    <link href="<?php echo $site_template; ?>statics/images/apple-touch-icon-72.png" sizes="72x72" rel="apple-touch-icon">
-    <link href="<?php echo $site_template; ?>statics/images/apple-touch-icon-114.png" sizes="114x114" rel="apple-touch-icon">
-    <title><?php echo $site_title; ?></title>
-    <meta name="keywords" content="{dede:global.cfg_keywords/}" />
-    <meta name="description" content="{dede:global.cfg_description/}">
-    <link href="<?php echo $site_template; ?>statics/css/style.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="<?php echo $site_template; ?>statics/js/jquery-1.9.1.js"></script>
-    <script type="text/javascript" src="<?php echo $site_template; ?>statics/js/theme_trust.js"></script>
-    <style type="text/css">
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-        }
-        .iw_poi_title {
-            color: #CC5522;
-            font-size: 14px;
-            font-weight: bold;
-            overflow: hidden;
-            padding-right: 13px;
-            white-space: nowrap
-        }
-        .iw_poi_content {
-            font: 12px arial, sans-serif;
-            overflow: visible;
-            padding-top: 4px;
-            white-space: -moz-pre-wrap;
-            word-wrap: break-word
-        }
-    </style>
-    <script type="text/javascript" src="<?php echo $site_template; ?>statics/js/main.js"></script>
-    <script>
-        jQuery(document).ready(function() {
-            jQuery('#openSidebar').click(function() {
-                jQuery('.wrapper').toggleClass('openNav');
-
-            });
-            jQuery('#menu a').click(function() {
-                jQuery('.wrapper').removeClass('openNav');
-            });
-        });
-    </script>
-    <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
-    <style type="text/css">
-        html,
-        body,
-        wrapper {
-            height: 100%;
-        }
-    </style>
-</head>
+﻿<?php include $this->_include('header.html'); ?>
 
 <body>
     <div class="wrapper">
-        <?php include $this->_include('header.html'); ?>
+        <?php include $this->_include('head_index.html'); ?>
 
         <div class="pageMain">
             <div id="header">
@@ -93,7 +35,7 @@
                     <div class="b_2">
                         <div class="k1120 clearfix">
                             <h2>提供创新品牌网站设计服务</h2>
-                            <h1>DEDECMS51.COM</h1>
+                            <h1>QIZHONGBAO.NET</h1>
                             <h5>一直致力于提供专业的设计解决方案，服务平台涵盖了互联网平台、移动平台，我们用设计为您赢得商机。</h5>
                         </div>
                     </div>
@@ -173,7 +115,7 @@
                 </div>
                 <div class="ab_3">
                     <h3>致力于提升客户品牌形象 , 实现客户商业目标</h3>
-                    <p class="moreBox"><a href="http://wpa.qq.com/msgrd?v=3&uin={dede:global.qq/}&site=qq&menu=yes" class="viewBtn">点击咨询</a>
+                    <p class="moreBox"><a href="http://wpa.qq.com/msgrd?v=3&uin=43431655&site=qq&menu=yes" class="viewBtn">点击咨询</a>
                     </p>
                 </div>
             </div>
@@ -231,21 +173,18 @@
                             </div>
                         </div>
 
-						<form action="/qizhongbao/index.php?c=index&a=form&modelid=3"  enctype="multipart/form-data" method="post" >
-<input type="hidden" name="action" value="post" />
-<input type="hidden" name="diyid" value="1" />
-<input type="hidden" name="do" value="2" />
-                            <?php echo $fields; ?>
+						<form type="hidden" action="<?php echo url('index/formadd'); ?>"  enctype="multipart/form-data" method="post" >
+
                             <div class="messageRow_2">
                                 <div class="messageBox">
                                     <div class="fromList">
-                                        <input type="text" placeholder="您的姓名" value='' name="data[fullname]" id="full_name" />
+                                        <input type="text" placeholder="您的姓名" value='' name="data[fullname]" id="fullname" required/>
                                     </div>
                                     <div class="fromList">
-                                        <input type="text" placeholder="联系电话" value='' name="data[mobile]" id="mobile" />
+                                        <input type="text" placeholder="联系电话" value='' name="data[mobile]" id="mobile" required/>
                                     </div>
                                     <div class="fromList">
-                                        <input type="text" placeholder="电子邮箱" value='' name="data[email]" id="email" />
+                                        <input type="email" placeholder="电子邮箱" value='' name="data[email]" id="email" />
                                     </div>
                                     <div class="fromList">
                                         <input type="text" placeholder="公司名称" value='' name="data[company]" id="company" />
@@ -255,18 +194,8 @@
                             <div class="messageRow_3">
                                 <div class="messageBox">
                                     <div class="fromList">
-                                        <textarea placeholder="填写详细内容" value='' name="msg" id="msg"></textarea>
+                                        <textarea placeholder="填写详细内容" value='' name="data[msg]" id="msg" required></textarea>
                                     </div>
-									<input name="mytime" value="" type="hidden"  id="mytime"  />
-      <script type="text/javascript">
-                    window.onload = function(){
-                    var nowDate = new Date();
-                    var str = nowDate.getFullYear()+"-"+(nowDate.getMonth() + 1)+"-"+nowDate.getDate()+" "+nowDate.getHours()+":"+nowDate.getMinutes()+":"+nowDate.getSeconds();
-                    document.getElementById("mytime").value=str;
-                    }
-                    </script>
-									<input type="hidden" name="dede_fields" value="full_name,text;mobile,text;email,text;company,text;msg,multitext;mytime,text" />
-                                    <input type="hidden" name="dede_fieldshash" value="c971c82ee72551f4e9e131a5a98d85bc" />
                                     <input type="image" name="sumbit" src="<?php echo $site_template; ?>statics/images/btn.png"  /><span class="fromListInfo">我们将在1个工作日内回复，资料会保密处理。</span>
                                    
                                 </div>
@@ -292,7 +221,7 @@
         //创建地图函数：
         function createMap() {
             var map = new BMap.Map("dituContent"); //在百度地图容器中创建一个地图
-            var point = new BMap.Point(121.520245, 31.30509); //定义一个中心点坐标
+            var point = new BMap.Point(116.650009,40.339871); //定义一个中心点坐标
             map.centerAndZoom(point, 18); //设定地图的中心点和坐标并将地图显示在地图容器中
             window.map = map; //将map变量存储在全局
         }
@@ -310,17 +239,17 @@
 
         //标注点数组
         var markerArr = [{
-            title: "织梦无忧",
-            content: "山东滕州碧水云天-中央城",
-            point: "121.520061|31.305862",
+            title: "北京企中宝科技有限公司",
+            content: "北京企中宝科技有限公司",
+            point: "116.650009,40.339871",
             isOpen: 0,
             icon: {
-                w: 23,
+                /*w: 23,
                 h: 25,
                 l: 46,
                 t: 21,
                 x: 9,
-                lb: 12
+                lb: 12*/
             }
         }];
         //创建marker
